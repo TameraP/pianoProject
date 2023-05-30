@@ -11,19 +11,23 @@ export default {
             whiteKeys: [
                 {
                     note: 'F',
-                    clicked: false
+                    clicked: false,
+                    id: 6
                 },
                 {
                     note: 'G',
-                    clicked: false
+                    clicked: false,
+                    id: 7
                 },
                 {
                     note: 'H',
-                    clicked: false
+                    clicked: false,
+                    id: 8
                 },
                 {
                     note: 'I',
-                    clicked: false
+                    clicked: false,
+                    id: 9
                 }
             ],
             selectedKeys:[]
@@ -44,3 +48,5 @@ export default {
     }
     
 };
+
+/*inspired by https://codepen.io/matthiascw/pen/LyoErW */

@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible"/>
@@ -11,11 +11,10 @@
     </head>
     <body>
     <div id="app" class="page">
-    <h2>test</h2>
     </div> 
 
     <script type="module">
-    
+        // import axios from 'axios';
         import App from './js/components/App.js';
 
         Vue.createApp(App).mount('#app');
