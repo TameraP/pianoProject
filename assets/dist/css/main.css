@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blackKey {
+    background-color: #000;
+    color: #fff;
+    height: 350px;
+    width: 200px;
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.whiteKey {
+    background-color: #fff;
+    border: 1px solid #000;
+    height: 220px;
+    width: 130px;
+}
+
+.blueKey {
+    background-color: blue;
+}
+
+.blueKey2 {
+    background-color: blue;
+    color: #fff;
+}
+
+.blackKeyContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.whiteKeyContainer {
+    position: absolute;
+    top: 0;
+    display: flex;
+}
+
+.whiteKeyContainer .whiteKey {
+    margin: 0 60px;
+}
+
