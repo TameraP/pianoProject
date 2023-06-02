@@ -52,3 +52,7 @@ body {
 img {
     width: 100px;
 }
+
+#outRepeatImg {
+    display: flex;
+}
