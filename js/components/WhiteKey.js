@@ -1,9 +1,7 @@
 export default {
     template:`
-        <div>
-            <div v-for="key in whiteKeys">
-                <button @click="$emit('chooseNotes', key, whiteKeys, $event)" class="whiteKey" :class="{ 'blueKey': key.clicked }"> {{ key.note }}</button>
-            </div>
+        <div v-for="key in whiteKeys">
+            <button @click="$emit('chooseNotes', key, whiteKeys, $event)" class="whiteKey" :class="{ 'blueKey': key.clicked }"> {{ key.note }}</button>
         </div>
     `,
     data() {

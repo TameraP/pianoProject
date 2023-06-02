@@ -3,13 +3,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100vw;
 }
 
 .blackKey {
     background-color: #000;
     color: #fff;
     height: 350px;
-    width: 200px;
+    width: 20vw;
     border: 1px solid #fff;
     display: flex;
     justify-content: center;
@@ -20,11 +21,12 @@ body {
     background-color: #fff;
     border: 1px solid #000;
     height: 220px;
-    width: 130px;
+    width: 15vw;
 }
 
 .blueKey {
     background-color: blue;
+    color: #fff;
 }
 
 .blueKey2 {
@@ -34,7 +36,7 @@ body {
 
 .blackKeyContainer {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     text-align: center;
 }
@@ -43,11 +45,13 @@ body {
     position: absolute;
     top: 0;
     display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
 }
 
-.whiteKeyContainer .whiteKey {
+/* .whiteKeyContainer .whiteKey {
     margin: 0 60px;
-}
+} */
 
 img {
     width: 100px;
@@ -55,4 +59,6 @@ img {
 
 #outRepeatImg {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

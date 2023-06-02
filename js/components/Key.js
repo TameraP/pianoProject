@@ -11,13 +11,22 @@ export default {
     <div class="blackKeyContainer">
         <black-key @choose-notes="getNotes"></black-key>
     </div>
-    <white-key @choose-notes="getNotes" class="whiteKeyContainer"></white-key>
+
+    <div class="whiteKeyContainer">
+        <white-key @choose-notes="getNotes"></white-key>
+    </div>
+
     <save @start-saving="savedNotesFun"></save> <repeat @repeat-saved="startSaved"></repeat>
+
     <play :sound="sound"></play>
+
     <div class="notesBox">
         <notes :image="image"></notes>
     </div>
+
     <div id="outRepeatImg"></div>
+
+    <div id="outRepeatSound"></div>
     `,
 
 
@@ -31,6 +40,7 @@ export default {
             startSaving: false,
             saveNotes: [],
             playSaved: [],
+            showSaved:[],
             newKey: []
         }
     },
@@ -75,11 +85,31 @@ export default {
             this.image = "";
             for(let i = 0; i < this.saveNotes.length; i++) {
                 this.playSaved.push("<iframe src='" + this.saveNotes[i].sound + "' allow='autoplay' style='display:none'></iframe>");
-                this.playSaved.push("<div><img src='" + this.saveNotes[i].image + "' style='{ width: 100px }'/>" + this.newKey[i].note + "</div>"); 
+                this.showSaved.push("<div><img src='" + this.saveNotes[i].image + "' style='{ width: 100px }'/>" + this.newKey[i].note + "</div>"); 
             }
+
             for(let x = 0; x < this.playSaved.length; x++) {
-                document.getElementById("outRepeatImg").innerHTML += this.playSaved[x];
+                play(this.playSaved, x);
+                show(this.showSaved, x);
             }
+
+            function play(savedArr, x) {
+                setTimeout(function() {
+                    document.getElementById("outRepeatSound").innerHTML = savedArr[x];
+                }, 700 * x);
+            }
+
+            function show(savedArr, x) {
+                setTimeout(function() {
+                    document.getElementById("outRepeatImg").innerHTML += savedArr[x];
+                }, 700 * x);
+            }
+            // if(x++ < this.playSaved.length) {
+            //     document.getElementById("outRepeatImg").innerHTML += this.playSaved[x];
+            //     setTimeout(go, 2000);
+            // }
+        //}
+
         }
 
     }
