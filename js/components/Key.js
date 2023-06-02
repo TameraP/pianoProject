@@ -1,14 +1,20 @@
 import BlackKey from "./BlackKey.js";
 import WhiteKey from "./WhiteKey.js";
+import Play from "./Play.js";
+import Notes from "./Notes.js";
 
 export default {
-    components: { BlackKey, WhiteKey },
+    components: { BlackKey, WhiteKey, Play, Notes },
     template: `
 
     <div class="blackKeyContainer">
         <black-key @choose-notes="getNotes"></black-key>
     </div>
-    <white-key class="whiteKeyContainer"></white-key>
+    <white-key @choose-notes="getNotes" class="whiteKeyContainer"></white-key>
+    <play :sound="sound"></play>
+    <div class="notesBox">
+        <notes :image="image"></notes>
+    </div>
     `,
 
 
@@ -18,8 +24,7 @@ export default {
                 path: "",
                 width: "200"
             },
-            sound:"",
-            selectedKeys: []
+            sound:""
         }
     },
 
@@ -43,7 +48,11 @@ export default {
 
             fetch('../../classes/input.php', requestOptions)
                 .then(response => response.json())
-                .then(data => console.log(data))
+                .then(data => {
+                    this.image.path = data.image;
+                    this.sound = data.sound;
+                   // console.log(this.sound);
+                })
         }
     }
     // async mounted () {
@@ -59,7 +68,3 @@ export default {
     // }
 };
 
-    // <audio controls autoplay>
-    //     <source :src="sound" type="audio/mpeg">
-    // </audio>
-    // <img :src="image.path" :style="{ width: image.width + 'px' }"/> 

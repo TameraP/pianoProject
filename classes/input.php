@@ -11,11 +11,11 @@ $keyPath = $pianoNote->GetColor($getKey);
 $getNote = $pianoNote->GetNote($getKey);
 
 $keyPath['image'].= $getNote.".png";
-$keyPath['sound'].= $getNote.".wav";
+$keyPath['sound'].= $getNote.".mp3";
 
 //encode the code and return it as json
 $returnData = json_encode($keyPath);
-file_put_contents('../js/components/ReturnedKey.js', $returnData);
+// file_put_contents('../js/components/ReturnedKey.js', $returnData);
 echo $returnData;
 exit();
 
