@@ -44,6 +44,16 @@ export default {
                 });
                 key.clicked = true;
             }
+
+            const requestOptions = {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ note: key.note, type: "white" })
+            };
+
+            fetch('../../classes/input.php', requestOptions)
+                .then(response => response.json())
+                .then(data => console.log(data))
         }
     }
     

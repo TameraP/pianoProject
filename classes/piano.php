@@ -3,43 +3,33 @@
 
 class Piano {
 
-    protected $key; 
-    protected $color;
+    protected $key = []; 
     protected $note;
-    protected $imagePath;
-    protected $soundPath;
-    //public $key;
+    protected $resultPath = [];
 
-    public function __construct($key) {
+    public function __construct($key = []) {
         $this->key = $key;
     }
 
+    public function GetKey($key) {
+        return $this->key;
+    }
+
     public function GetColor($key) {
+        if($key->type == "black") {
+            $resultPath['image'] = "/assets/images/black/";
+            $resultPath['sound'] = "/assets/sounds/black/";
+        }
+        else {
+            $resultPath['image'] = "/assets/images/white/";
+            $resultPath['sound'] = "/assets/sounds/white/";
+        }
 
+        return $resultPath;
     }
 
-    public function BlackKeys($key) {
-        return $this->key;
-    }
-
-    public function WhiteKeys($key) {
-        return $this->key;
-    }
-
-    public function GetImagePath($key) {
-
-    }
-
-    public function GetSoundPath($key) {
-
-    }
-    
-    public function Play() {
-
-    }
-
-    public function Note($key) {
-        return $this->key;
+    public function GetNote($key) {
+        return $key->note;
     }
 }
 
