@@ -71,6 +71,7 @@ export default {
                     if(this.startSaving) {
                         this.saveNotes.push(data);
                         // console.log(this.saveNotes);
+                        this.startSaving = "";
                     }
                 })
                 this.image.path = "";
