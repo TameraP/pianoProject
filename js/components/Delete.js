@@ -1,7 +1,7 @@
 export default {
     template: `
         <div class="saveButton">
-            <button @click="$emit('startSaving', $event)"> Save </button>
+            <button @click="$emit('deleteSaved', $event)">Refresh </button>
         </div>
     `,
 

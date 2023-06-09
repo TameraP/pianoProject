@@ -9,7 +9,7 @@ body {
 .blackKey {
     background-color: #000;
     color: #fff;
-    height: 350px;
+    height: 310px;
     width: 20vw;
     border: 1px solid #fff;
     display: flex;
@@ -20,7 +20,7 @@ body {
 .whiteKey {
     background-color: #fff;
     border: 1px solid #000;
-    height: 220px;
+    height: 180px;
     width: 15vw;
 }
 
@@ -61,4 +61,25 @@ img {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.pianoButtons {
+    display: flex;
+    justify-content: center;
+}
+
+.pianoButtons div {
+    padding: 10px;
+}
+
+.pianoButtons div button {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 20px;
+    width: 150px;
+}
+
+.pianoButtons div button:hover {
+    background-color: blue;
 }

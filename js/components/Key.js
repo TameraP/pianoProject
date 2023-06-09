@@ -4,8 +4,10 @@ import Play from "./Play.js";
 import Notes from "./Notes.js";
 import Save from "./Save.js";
 import Repeat from "./Repeat.js";
+import Delete from "./Delete.js";
+
 export default {
-    components: { BlackKey, WhiteKey, Play, Notes, Save, Repeat},
+    components: { BlackKey, WhiteKey, Play, Notes, Save, Repeat, Delete },
     template: `
 
     <div class="blackKeyContainer">
@@ -16,7 +18,11 @@ export default {
         <white-key @choose-notes="getNotes"></white-key>
     </div>
 
-    <save @start-saving="savedNotesFun"></save> <repeat @repeat-saved="startSaved"></repeat>
+    <div class="pianoButtons">
+        <save @start-saving="savedNotesFun"></save> 
+        <repeat @repeat-saved="startSaved"></repeat> 
+        <delete @delete-saved="deleteSaved"></delete>
+    </div>
 
     <play :sound="sound"></play>
 
@@ -46,6 +52,7 @@ export default {
     },
 
     methods: {
+
         getNotes(key, keyArray, e) {
             this.newKey.push(key);
            if(e.ctrlKey) {  //adding ctrlKey to your key provides the ability to click multiple sections using ctrl + click
@@ -67,11 +74,13 @@ export default {
                 .then(response => response.json())
                 .then(data => {
                     this.image.path = data.image;
+                    console.log(data.image);
                     this.sound = data.sound;
                     if(this.startSaving) {
+                        // alert("yes");
                         this.saveNotes.push(data);
-                        // console.log(this.saveNotes);
-                        this.startSaving = "";
+                        console.log(this.saveNotes);
+                        //this.startSaving = "";
                     }
                 })
                 this.image.path = "";
@@ -111,7 +120,11 @@ export default {
             // }
         //}
 
-        }
+        },
+
+        deleteSaved() {
+            window.location.reload();
+        },
 
     }
     // async mounted () {
