@@ -17,12 +17,12 @@ class Piano {
 
     public function GetColor($key) {
         if($key->type == "black") {
-            $resultPath['image'] = "/assets/images/black/";
-            $resultPath['sound'] = "/assets/sounds/black/";
+            $resultPath['image'] = "/2021-2023Projects/pianoProject/assets/images/black/";
+            $resultPath['sound'] = "/2021-2023Projects/pianoProject/assets/sounds/black/";
         }
         else {
-            $resultPath['image'] = "/assets/images/white/";
-            $resultPath['sound'] = "/assets/sounds/white/";
+            $resultPath['image'] = "/2021-2023Projects/pianoProject/assets/images/white/";
+            $resultPath['sound'] = "/2021-2023Projects/pianoProject/assets/sounds/white/";
         }
 
         return $resultPath;
