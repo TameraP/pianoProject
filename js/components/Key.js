@@ -70,7 +70,7 @@ export default {
                 body: JSON.stringify({ note: key.note, type: key.color })
             };
 
-            fetch('../../classes/input.php', requestOptions)
+            fetch('./classes/input.php', requestOptions)
                 .then(response => response.json())
                 .then(data => {
                     this.image.path = data.image;
